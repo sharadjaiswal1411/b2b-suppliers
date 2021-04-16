@@ -1,0 +1,169 @@
+<nav class="page-breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink=".">Product</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Add new</li>
+  </ol>
+</nav>
+
+<div class="col-md-12  grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <form  [formGroup]="exform" (ngSubmit)=submitForm()>
+        <div class="row">
+
+          <div class="col-md-12">
+          <div class="form-group">
+              <label class="col-form-label">Name &nbsp;<span class="text-danger">*</span></label>
+              <input formControlName="name" type="text"  class="form-control" placeholder="Name">
+              <small *ngIf = "exform.get('name').invalid &&exform.get('name').touched" class="text-danger"> Name is Required</small>
+          </div>
+        </div>
+    
+          
+        <div class="col-md-6">
+          <div class="form-group">
+              <label class="col-form-label">Matric&nbsp;<span class="text-danger">*</span></label>
+              <select formControlName="metric_id" class="form-control" id="metric_id">
+                <option selected disabled> Select Matric</option>
+                <option>12-18</option>
+                <option>18-22</option>
+                <option>22-30</option>
+                <option>30-60</option>
+                <option>Above 60</option>
+              </select>
+              <small  *ngIf = "exform.get('metric_id').invalid && exform.get('metric_id').touched"   class="text-danger">Matric is Required</small>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+              <label  class="col-form-label">Featured Categories &nbsp;<span class="text-danger">*</span></label>
+              <select formControlName="featured_categories" class="form-control" id="featured_categories">
+                <option selected disabled>Select Featured Categories</option>
+                <option>12-18</option>
+                <option>18-22</option>
+                <option>22-30</option>
+                <option>30-60</option>
+                <option>Above 60</option>
+              </select>
+              <small  *ngIf = "exform.get('featured_categories').invalid && exform.get('featured_categories').touched"   class="text-danger">Featured Categories is Required</small>
+          </div>
+        </div>
+
+          <div class="col-md-6">
+         <div class="form-group">
+              <label class="col-form-label"> Meta  Title</label>
+              <input  type="text" formControlName="meta_title" class="form-control" placeholder="Meta Title">
+          </div>
+        </div>
+
+      
+        <div class="col-md-6">
+          <div class="form-group">
+              <label class="col-form-label">Price &nbsp;<span class="text-danger">*</span></label>
+              <input formControlName="price"  class="form-control" placeholder="Price">
+              <small  *ngIf = "exform.get('price').invalid && exform.get('price').touched"   class="text-danger">Price is Required</small>
+          </div>
+        </div>
+
+        
+        <div class="col-md-4 ">
+          <div class="form-group">
+              <label  class="col-form-label">Category &nbsp;<span class="text-danger">*</span></label>
+              <select  formControlName="category_id" class="form-control" id="category_id">
+                  <option selected disabled>Select Category</option>
+                  <option>12-18</option>
+                  <option>18-22</option>
+                  <option>22-30</option>
+                  <option>30-60</option>
+                  <option>Above 60</option>
+                </select>
+              <small  *ngIf = "exform.get('category_id').invalid && exform.get('category_id').touched"   class="text-danger">Category is Required</small>
+          </div>
+       </div>
+
+       <div class="col-md-4">
+        <div class="form-group">
+            <label class="col-form-label">Brand &nbsp;<span class="text-danger">*</span></label>
+            <select  formControlName="brand_id" class="form-control" id="brandId">
+              <option selected disabled> Select Brand</option>
+              <option>12-18</option>
+              <option>18-22</option>
+              <option>22-30</option>
+              <option>30-60</option>
+              <option>Above 60</option>
+            </select>
+
+            <small *ngIf = "exform.get('brand_id').invalid && exform.get('brand_id').touched"  class="text-danger"> Brand  is Required</small>
+        </div>
+      </div>
+ 
+
+         <div class="col-md-4">
+          <div class="form-group">
+              <label class="col-form-label">Supplier-Id &nbsp;<span class="text-danger">*</span></label>
+              <select formControlName="supplier_id" class="form-control" id="supplier_id">
+                <option selected > Select Supplier </option>
+                <option>12-18</option>
+                <option>18-22</option>
+                <option>22-30</option>
+                <option>30-60</option>
+                <option>Above 60</option>
+              </select>
+              <small  *ngIf = "exform.get('supplier_id').invalid && exform.get('supplier_id').touched"   class="text-danger">Supplier is Required</small>
+            </div>
+          </div>
+
+        <div class="col-md-12">
+          <div class="form-group">
+              <label class="col-form-label">Meta Description</label>
+              <textarea  formControlName="meta_description"  class="form-control" placeholder="Meta Description">
+              </textarea>
+          </div>
+        </div>
+        
+        <div class="col-sm-2 ">
+          <div class="form-group">
+            <label class="col-form-label">Status</label>
+          &nbsp; &nbsp;
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" formControlName="status"   value="Active">
+              <i class="input-frame"></i>
+           Active
+            </label>
+          </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" formControlName="status"  value="Inactive" >
+                <i class="input-frame"></i>
+                Inactive
+              </label>
+            </div>
+          </div>
+      </div>
+
+          <div class="col-md-8">
+            <div class="form-group">
+                <label>Main-Image</label>
+                <input (change)="handleFileInput($event)" formControlName="main_image"  class="form-control" type="file" name="img[]" class="file-upload-default" id="fileUploadInputExample">
+                <div class="input-group col-xs-12" (click)="openFileBrowser($event)">
+                  <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
+                  <span class="input-group-append">
+                    <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+      
+        
+          <div class="form-group">
+              <button type="submit" class="btn btn-primary mr-2">Submit</button>
+              <button class="btn btn-light">Cancel</button>
+            </div>
+            
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

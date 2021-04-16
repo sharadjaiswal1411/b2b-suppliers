@@ -1,0 +1,191 @@
+<nav class="page-breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink=".">Setting</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Setting</li>
+    </ol>
+  </nav>
+
+<div class="col-md-12  grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <form  [formGroup]="exform" (ngSubmit)=submitForm()>
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="col-form-label">site_name</label>
+                        <input type="text"  formControlName="site_name"   class="form-control" 
+                        placeholder=" site_name  ">
+                    </div>
+                </div>
+        
+        <div class="col-md-6 ">
+            <div class="form-group">
+                <label class="col-form-label">site_favicon </label>
+                <input  type="text" formControlName="site_favicon"  class="form-control" placeholder="site_favicon">
+               
+           
+            </div>
+         </div>
+
+
+        <div class="col-md-6 ">
+            <div class="form-group">
+                <label class="col-form-label"> Address </label>
+                <input type="text"  formControlName="address" class="form-control" placeholder="Address">
+            </div>
+        </div>
+       
+
+            
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">contact_nos </label>
+                <input type="text" formControlName="contact_nos"  class="form-control"
+                placeholder="contact_nos">
+            </div>
+        </div>
+
+        
+
+            <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">email_id </label>
+                <input type="email" formControlName="email_id"  class="form-control" placeholder=" email_id">
+               
+            </div>
+        </div>
+
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">opening_hours  </label>
+                <input type="text" formControlName="opening_hours"  class="form-control"
+                placeholder="opening_hours">
+            </div>
+        </div>
+
+
+            <!-- -->
+            <div class="col-md-6 ">
+            <div class="form-group">
+                <label class="col-form-label">facebook &nbsp;<span class="text-danger">*</span></label>
+                <input type="url" formControlName="facebook"  class="form-control" placeholder="facebook Id">
+                <small  *ngIf = "exform.get('facebook').invalid && exform.get('facebook').touched"   class="text-danger">facebook Id  is Required</small>
+            </div>
+        </div>
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">twitter   &nbsp;<span class="text-danger">*</span></label>
+                <input type="url" formControlName="twitter"  class="form-control" placeholder=" twitter Id">
+                <small  *ngIf = "exform.get('twitter').invalid && exform.get('twitter').touched"  class="text-danger">twitter Id is Required</small>
+            </div>
+        </div>
+
+        <div class="col-md-6 ">
+            <div class="form-group">
+                <label class="col-form-label">linked_in  &nbsp;<span class="text-danger">*</span></label>
+                <input type="url" formControlName="linked_in"  class="form-control" placeholder=" linked_in Id">
+                <small  *ngIf = "exform.get('linked_in').invalid && exform.get('linked_in').touched"  class="text-danger">linked_in Id is Required</small>
+            </div>
+        </div>
+
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">pinerest &nbsp;<span class="text-danger">*</span></label>
+                <textarea  type="text" formControlName="pinerest" type="text"  class="form-control"placeholder="pinerest"></textarea>
+                <small *ngIf = "exform.get('pinerest').invalid && exform.get('pinerest').touched"  class="text-danger"> pinerest is Required</small>
+            </div>
+        </div>
+
+       
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">google_map   &nbsp;<span class="text-danger">*</span></label>
+                <input type="text" formControlName="google_map"  class="form-control" placeholder=" google_map ">
+                <small  *ngIf = "exform.get('google_map').invalid && exform.get('google_map').touched"  class="text-danger">google_map  is Required</small>
+            </div>
+        </div>
+
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">google_embedded_code   &nbsp;<span class="text-danger">*</span></label>
+                <input type="text" formControlName="google_embedded_code"  class="form-control" placeholder=" google_embedded_code ">
+                <small  *ngIf = "exform.get('google_embedded_code').invalid && exform.get('google_embedded_code').touched"  class="text-danger">google_embedded_code is Required</small>
+            </div>
+        </div>
+
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">analytics_code   &nbsp;<span class="text-danger">*</span></label>
+                <input type="text" formControlName="analytics_code"  class="form-control" placeholder=" analytics_code">
+                <small  *ngIf = "exform.get('analytics_code').invalid && exform.get('analytics_code').touched"  class="text-danger">analytics_code  is Required</small>
+            </div>
+        </div>
+
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">share_this_code   &nbsp;<span class="text-danger">*</span></label>
+                <input type="text" formControlName="share_this_code"  class="form-control" placeholder=" share_this_code ">
+                <small  *ngIf = "exform.get('share_this_code').invalid && exform.get('share_this_code').touched"  class="text-danger">share_this_code  is Required</small>
+            </div>
+        </div>
+
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">webmaster_code   &nbsp;<span class="text-danger">*</span></label>
+                <input type="text" formControlName="webmaster_code"  class="form-control" placeholder=" webmaster_code ">
+                <small  *ngIf = "exform.get('webmaster_code').invalid && exform.get('webmaster_code').touched"  class="text-danger">webmaster_code  is Required</small>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">absense_code   &nbsp;<span class="text-danger">*</span></label>
+                <input type="text" formControlName="absense_code"  class="form-control" placeholder=" absense_code ">
+                <small  *ngIf = "exform.get('absense_code').invalid && exform.get('absense_code').touched"  class="text-danger">absense_code  is Required</small>
+            </div>
+        </div>
+        
+
+
+        <div class="col-md-12  ">
+            <div class="form-group">
+                <label class="col-form-label">meta_title   &nbsp;<span class="text-danger">*</span></label>
+                <textarea type="text" formControlName="meta_title"  class="form-control" placeholder=" meta_title "></textarea>
+                <small  *ngIf = "exform.get('meta_title').invalid && exform.get('meta_title').touched"  class="text-danger">meta_title is Required</small>
+            </div>
+        </div>
+
+        <div class="col-md-12 ">
+            <div class="form-group">
+                <label class="col-form-label">meta_description   &nbsp;<span class="text-danger">*</span></label>
+                <textarea type="text" formControlName="meta_description"  class="form-control" placeholder=" meta_description "></textarea>
+                <small  *ngIf = "exform.get('meta_description').invalid && exform.get('meta_description').touched"  class="text-danger">meta_description is Required</small>
+            </div>
+        </div>
+    
+        
+        <div class="col-md-12  ">
+            <div class="form-group">
+                <label class="col-form-label">meta_keywords   &nbsp;<span class="text-danger">*</span></label>
+                <textarea type="text" formControlName="meta_keywords"  class="form-control" placeholder=" meta_keywords "></textarea>
+                <small  *ngIf = "exform.get('meta_keywords').invalid && exform.get('meta_keywords').touched"  class="text-danger">meta_keywords is Required</small>
+            </div>
+        </div>
+                
+      <div class="col-md-12 grid-margin stretch-card">
+        <div class="card-body d-flex flex-column align-items-center">
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <button class="btn btn-light">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,33 @@
+export class Supplier {
+    id:number;
+    name:string;
+    slug:string;
+    about:string;
+    business_id:any;
+    category_id:any;
+    featured_categories:any;
+    brand_id:any;
+    user_id:number;
+    yoe:number;
+    noe:number;
+    company_owner:any;
+    contact_email:any;
+    contact_phone:any;
+    contact_mobile:any;
+    website:any;
+    facebook_url:any;
+    twitter_url:any;
+    linkedin_url:any;
+    country_id:number;
+    state_id:number;
+    city_id:number;
+    zipcode:any;
+    full_address:any;
+    logo:string;
+    banner:string;
+    status:boolean;
+    meta_title:string;
+    meta_description :string;
+    created_at:number;
+    updated_at:number;
+}

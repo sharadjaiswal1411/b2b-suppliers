@@ -1,0 +1,37 @@
+<nav class="page-breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="."></a>Metric</li>
+      <li class="breadcrumb-item active" aria-current="page">Metric</li>
+    </ol>
+  </nav>
+  
+  <div class="col-md-12  grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <form  [formGroup]="exform" (ngSubmit)=submitForm()>
+          <div class="row">
+  
+            <div class="col-md-12">
+            <div class="form-group">
+                <label class="col-form-label">Name &nbsp;<span class="text-danger">*</span></label>
+                <input formControlName="name" type="text"  class="form-control" placeholder="Name" maxlength="220">
+                <small *ngIf = "exform.get('name').invalid &&exform.get('name').touched" class="text-danger"> Name is Required</small>
+            </div>
+        </div>
+
+        <div class="col-md-12 grid-margin stretch-card">
+         
+            <div class="card-body d-flex flex-column align-items-center">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button class="btn btn-light">Cancel</button>
+              </div>
+            </div>
+          </div>
+        
+
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>

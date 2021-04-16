@@ -1,0 +1,124 @@
+<nav class="page-breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink=".">Category</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Add new</li>
+    </ol>
+  </nav>
+
+  <div class="col-sm-12  ">
+    <div class="card">
+      <div class="card-body">
+        <form  [formGroup]="exform" (ngSubmit)=submitForm()>
+          <div class="row">
+
+            <div class="col-sm-12  ">
+              <div class="form-group">
+              <label class="col-form-label"> Name &nbsp;<span class="text-danger">*</span></label>
+              <input formControlName="name" type="text"  class="form-control" placeholder="Name">
+              <small *ngIf = "exform.get('name').invalid && exform.get('name').touched" class="text-danger"> Name is required</small>
+             </div>
+          </div>
+
+        <div class="col-sm-12  ">
+          <div class="form-group">
+              <label class="col-form-label">Description</label>
+              <textarea  type="text" formControlName="description"  class="form-control" placeholder="Description"> </textarea>
+              
+          </div>
+        </div>
+
+        <div class="col-sm-12  ">
+          <div class="form-group">
+              <label class="col-form-label">Meta Title</label>
+              <textarea type="text" formControlName="meta_title"  class="form-control" placeholder="Meta title"> </textarea>
+              
+          </div>
+        </div>
+
+        <div class="col-sm-12  ">
+          <div class="form-group">
+              <label class="col-form-label">H1</label>
+              <textarea  type="text" formControlName="h1"  class="form-control" placeholder="H1"> </textarea>
+              
+          </div>
+        </div>
+
+        <div class="col-sm-12  ">
+          <div class="form-group">
+              <label class="col-form-label">Meta Description</label>
+              <textarea  formControlName="meta_description"  class="form-control"  placeholder=" Meta Description"> </textarea>
+              
+          </div>
+        </div>
+
+        <div class="col-sm-12  ">
+          <div class="form-group">
+              <label class="col-form-label">Top Description</label>
+              <textarea  formControlName="top_description"  class="form-control"  placeholder=" Top Description"> </textarea>
+              
+          </div>
+        </div>
+        <div class="col-sm-12  ">
+          <div class="form-group">
+              <label class="col-form-label">Bottom Description</label>
+              <textarea  formControlName="bottom_description"  class="form-control"  placeholder=" Bottom Description"> </textarea>
+          </div>
+        </div>
+
+
+        <div class="col-sm-3 ">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" formControlName="featured"  class="form-control" class="form-check-input">
+              <i class="input-frame"></i>
+              Featured
+            </label>
+          </div>
+      </div>
+
+      <div class="col-sm-2 ">
+        <div class="form-group">
+          <label class="col-form-label">Status</label>
+        &nbsp; &nbsp;
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" formControlName="status"   value="Active">
+            <i class="input-frame"></i>
+         Active
+          </label>
+        </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" formControlName="status"  value="Inactive" >
+              <i class="input-frame"></i>
+              Inactive
+            </label>
+          </div>
+        </div>
+    </div>
+
+           <div class="col-sm-6 ">
+            <div class="form-group">
+              <label>Image</label>
+              <input (change)="handleFileInput($event)" formControlName="image" class="form-control" type="file" name="img[]" class="file-upload-default" id="fileUploadInputExample">
+              <div class="input-group col-xs-12" (click)="openFileBrowser($event)">
+                <input type="text"   class="form-control file-upload-info" disabled="" placeholder="Upload Image">
+                <span class="input-group-append">
+                  <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                </span>
+              </div>
+            </div>
+          </div>
+         
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+        <button class="btn btn-light">Cancel</button>
+      </div>
+
+           </div>
+          </form>
+        </div> 
+      </div>
+
+ </div>
+

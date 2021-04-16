@@ -1,0 +1,306 @@
+<nav class="page-breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink=".">Supplier</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Add new</li>
+    </ol>
+  </nav>
+
+<div class="col-md-12  grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <form  [formGroup]="exform" (ngSubmit)=submitForm()>
+            <div class="row">
+
+            <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label"> Name &nbsp;<span class="text-danger">*</span></label>
+                <input formControlName="name" type="text"  class="form-control" placeholder="Name">
+                <small *ngIf = "exform.get('name').invalid && exform.get('name').touched" class="text-danger"> Name is Required</small>
+            </div>
+        </div>
+        
+        <div class="col-md-6 ">
+            <div class="form-group">
+                <label class="col-form-label">Company Owner &nbsp;<span class="text-danger">*</span></label>
+                <input formControlName="company_owner"  class="form-control" placeholder="Company Owner">
+                <small  *ngIf = "exform.get('company_owner').invalid && exform.get('company_owner').touched"   class="text-danger">Company Owner is Required</small>
+           
+            </div>
+         </div>
+
+        <div class="col-md-6  ">
+        <div class="form-group">
+            <label  class="col-form-label">Business</label>
+            <select formControlName="business_id"  class="form-control" id="business_id">
+              <option selected disabled> Select Business</option>
+              <option>12-18</option>
+              <option>18-22</option>
+              <option>22-30</option>
+              <option>30-60</option>
+              <option>Above 60</option>
+            </select>
+          </div>
+        </div>
+
+
+            <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">Category &nbsp;<span class="text-danger">*</span></label>
+                <select formControlName="category_id" class="form-control" id="category_id">
+                    <option selected disabled> Select Category </option>
+                    <option>12-18</option>
+                    <option>18-22</option>
+                    <option>22-30</option>
+                    <option>30-60</option>
+                    <option>Above 60</option>
+                  </select>
+                <small  *ngIf = "exform.get('category_id').invalid && exform.get('category_id').touched"   class="text-danger">Category  is Required</small>
+            </div>
+         </div>
+             
+         <div class="col-md-6  ">
+            <div class="form-group">
+                <label  class="col-form-label">Featured Categories &nbsp;<span class="text-danger">*</span></label>
+                <select formControlName="featured_categories" class="form-control" id="featured_categories">
+                    <option selected disabled>Select Featured  Categories </option>
+                    <option>12-18</option>
+                    <option>18-22</option>
+                    <option>22-30</option>
+                    <option>30-60</option>
+                    <option>Above 60</option>
+                  </select>
+                <small  *ngIf = "exform.get('featured_categories').invalid && exform.get('featured_categories').touched"   class="text-danger">Featured Category is Required</small>
+            </div> 
+         </div>
+
+    
+         <div class="col-md-6  ">
+            <div class="form-group">
+                <label  class="col-form-label">Brand  &nbsp;<span class="text-danger">*</span></label>
+                <select  formControlName="brand_id" class="form-control" id="brand_id">
+                    <option selected disabled>Select Brand</option>
+                    <option>12-18</option>
+                    <option>18-22</option>
+                    <option>22-30</option>
+                    <option>30-60</option>
+                    <option>Above 60</option>
+                  </select>
+                <small  *ngIf = "exform.get('brand_id').invalid && exform.get('brand_id').touched"   class="text-danger">Brand is required</small>
+            </div>
+        </div>
+
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label  class="col-form-label">User &nbsp;<span class="text-danger">*</span></label>
+                <select formControlName="user_id"  class="form-control" id="user_id">
+                    <option selected disabled> Select User</option>
+                    <option>12-18</option>
+                    <option>18-22</option>
+                    <option>22-30</option>
+                    <option>30-60</option>
+                    <option>Above 60</option>
+                  </select>
+                <small  *ngIf = "exform.get('user_id').invalid && exform.get('user_id').touched"   class="text-danger">User Id is Required</small>
+            </div>
+        </div>
+
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label  class="col-form-label" >Number of employees &nbsp;<span class="text-danger">*</span></label>
+                <select formControlName="noe" class="form-control" id="noe">
+                    <option selected disabled>Select Employees</option>
+                    <option>12-18</option>
+                    <option>18-22</option>
+                    <option>22-30</option>
+                    <option>30-60</option>
+                    <option>Above 60</option>
+                  </select>
+                <small  *ngIf = "exform.get('noe').invalid && exform.get('noe').touched"   class="text-danger">NOE is required</small>
+            </div>
+        </div>
+
+        <div class="col-md-6 ">
+            <div class="form-group">
+                <label class="col-form-label">Year of Established &nbsp;<span class="text-danger">*</span></label>
+                <input formControlName="yoe"  class="form-control" placeholder="Year of Established">
+                <small  *ngIf = "exform.get('yoe').invalid && exform.get('yoe').touched"   class="text-danger">Year of Established is Required
+                </small>
+            </div>
+        </div>
+       
+
+            
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">Email &nbsp;<span class="text-danger">*</span></label>
+                <input type="email" formControlName="contact_email"  class="form-control"
+                placeholder="Email">
+                <small  *ngIf = "exform.get('contact_email').invalid && exform.get('contact_email').touched"   class="text-danger">Email  is Required</small>
+            </div>
+        </div>
+
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label"> Phone  &nbsp;<span class="text-danger">*</span></label>
+                <input type="number" formControlName="contact_phone"  class="form-control" placeholder=" Phone Number">
+                <small  *ngIf = "exform.get('contact_phone').invalid && exform.get('contact_phone').touched"   class="text-danger">Phone is Required</small>
+            </div>
+            </div>
+
+            <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">Mobile  &nbsp;<span class="text-danger">*</span></label>
+                <input type="number" formControlName="contact_mobile"  class="form-control" placeholder=" Mobile Number">
+                <small  *ngIf = "exform.get('contact_mobile').invalid && exform.get('contact_mobile').touched"   class="text-danger">Mobile is Required</small>
+            </div>
+        </div>
+
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">Website  &nbsp;<span class="text-danger">*</span></label>
+                <input type="url" formControlName="website"  class="form-control"
+                placeholder="Website">
+                <small  *ngIf = "exform.get('website').invalid && exform.get('website').touched"   class="text-danger">Website is Required</small>
+            </div>
+        </div>
+
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">Facebook</label>
+                <input type="url"  formControlName="facebook_url" class="form-control" placeholder="Facebook">
+            </div>
+        </div>
+            
+        <div class="col-md-6 ">
+            <div class="form-group">
+                <label class="col-form-label">Twitter </label>
+                <input type="url"  formControlName="twitter_url" class="form-control" placeholder=" Twitter">
+            </div>
+        </div>
+            
+        <div class="col-md-6 ">
+            <div class="form-group">
+                <label class="col-form-label">Linkdin </label>
+                <input type="url" formControlName="linkedin_url"  class="form-control"
+                placeholder="Linkdin">
+            </div>
+        </div>
+            <!-- -->
+            <div class="col-md-6 ">
+            <div class="form-group">
+                <label class="col-form-label">Country Id &nbsp;<span class="text-danger">*</span></label>
+                <input type="text" formControlName="country_id"  class="form-control" placeholder="Country Id">
+                <small  *ngIf = "exform.get('country_id').invalid && exform.get('country_id').touched"   class="text-danger">Country Id  is Required</small>
+            </div>
+        </div>
+        <div class="col-md-6  ">
+            <div class="form-group">
+                <label class="col-form-label">State Id  &nbsp;<span class="text-danger">*</span></label>
+                <input type="url" formControlName="state_id"  class="form-control" placeholder=" State Id">
+                <small  *ngIf = "exform.get('state_id').invalid && exform.get('state_id').touched"  class="text-danger">State Id is Required</small>
+            </div>
+        </div>
+
+        <div class="col-md-6 ">
+            <div class="form-group">
+                <label class="col-form-label">City Id  &nbsp;<span class="text-danger">*</span></label>
+                <input type="text" formControlName="city_id"  class="form-control" placeholder=" City Id">
+                <small  *ngIf = "exform.get('city_id').invalid && exform.get('city_id').touched"  class="text-danger">City Id is Required</small>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-form-label">Zip Code</label>
+                <input type="text"  formControlName="zipcode"   class="form-control" placeholder=" Zip Code ">
+            </div>
+        </div>
+
+        <div class="col-md-12  ">
+            <div class="form-group">
+                <label class="col-form-label">About &nbsp;<span class="text-danger">*</span></label>
+                <textarea formControlName="about" type="text"  class="form-control"placeholder="About"></textarea>
+                <small *ngIf = "exform.get('about').invalid && exform.get('about').touched"  class="text-danger"> About is Required</small>
+            </div>
+        </div>
+
+        <div class="col-md-12 ">
+            <div class="form-group">
+                <label class="col-form-label">Meta Title</label>
+                <input type="url" formControlName="meta_title" class="form-control" placeholder="Meta Title ">
+            </div>
+        </div>
+
+        <div class="col-md-12 ">
+            <div class="form-group">
+                <label class="col-form-label">Meta Description </label>
+                <textarea type="url"   formControlName="meta_description" class="form-control" placeholder="Meta Description"></textarea>
+            </div>
+        </div>
+            
+        
+
+        <div class="col-md-12 ">
+            <div class="form-group">
+                <label class="col-form-label">Full Address </label>
+                <textarea type="text"  formControlName="full_address" class="form-control" placeholder="Full Address"></textarea>
+            </div>
+        </div>
+
+        <div class="col-sm-2 ">
+            <div class="form-group">
+              <label class="col-form-label">Status</label>
+            &nbsp; &nbsp;
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" formControlName="status"   value="Active">
+                <i class="input-frame"></i>
+             Active
+              </label>
+            </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" formControlName="status"  value="Inactive" >
+                  <i class="input-frame"></i>
+                  Inactive
+                </label>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-md-5 ">
+             <div class="form-group">
+            <label>Logo</label>
+            <input (change)="handleFileInput($event)" formControlName="logo" class="form-control"  type="file" name="img[]" class="file-upload-default" id="fileUploadInputExample">
+            <div class="input-group col-xs-12" (click)="openFileBrowser($event)">
+              <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload logo">
+              <span class="input-group-append">
+                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5 ">
+          <div class="form-group">
+            <label>Banner</label>
+            <input (change)="handleFileInput($event)" formControlName="banner" class="form-control"  type="file" name="img[]" class="file-upload-default" id="fileUploadInputExample">
+            <div class="input-group col-xs-12" (click)="openFileBrowser($event)">
+              <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload banner">
+              <span class="input-group-append">
+                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+              </span>
+            </div>
+          </div>
+        </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button class="btn btn-light">Cancel</button>
+            </div>
+
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
